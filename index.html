@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support Me with Crypto</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+    }
+    .wallet {
+      margin: 40px auto;
+      max-width: 400px;
+      background: #222;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    }
+    img {
+      max-width: 200px;
+      margin-bottom: 10px;
+    }
+    .address {
+      word-break: break-all;
+      margin: 10px 0;
+      font-size: 0.95em;
+    }
+    button {
+      background: #444;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>Support Me with Crypto</h1>
+  
+  <div class="wallet">
+    <h2>Bitcoin (BTC)</h2>
+    <img src="your_btc_qr.png" alt="BTC QR">
+    <div class="address" id="btcAddress">your_btc_address_here</div>
+    <button onclick="copyToClipboard('btcAddress')">Copy BTC Address</button>
+  </div>
+
+  <div class="wallet">
+    <h2>Ethereum (ETH)</h2>
+    <img src="your_eth_qr.png" alt="ETH QR">
+    <div class="address" id="ethAddress">your_eth_address_here</div>
+    <button onclick="copyToClipboard('ethAddress')">Copy ETH Address</button>
+  </div>
+
+  <div class="wallet">
+    <h2>USDT (ERC20)</h2>
+    <img src="your_usdt_qr.png" alt="USDT QR">
+    <div class="address" id="usdtAddress">your_usdt_address_here</div>
+    <button onclick="copyToClipboard('usdtAddress')">Copy USDT Address</button>
+  </div>
+
+  <script>
+    function copyToClipboard(id) {
+      const el = document.getElementById(id);
+      const temp = document.createElement("textarea");
+      temp.value = el.textContent;
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand("copy");
+      document.body.removeChild(temp);
+      alert("Address copied to clipboard!");
+    }
+  </script>
+</body>
+</html>
